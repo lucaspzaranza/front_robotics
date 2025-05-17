@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  web_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host 
+    volumes:
+      - .:/front_robotics
+    environment:
+      - NODE_ENV=development
+      - DISPLAY=host.docker.internal:0.0
+    restart: always
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    network_mode: host
+    environment:
+      NGROK_AUTHTOKEN: "2vBR571gPTKo1R9dax5N0Bqm8D2_5pWJz8dgJyxTGbdD9eW2r"
+    tty: true
+    ports:
+      - 3000:3000
+    stdin_open: true
+    command: http --url=actual-internally-oarfish.ngrok-free.app 3000
+
+  

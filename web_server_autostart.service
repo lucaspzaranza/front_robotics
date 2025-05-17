@@ -1,0 +1,16 @@
+[Unit]
+Description=Start Front End Docker Compose app at boot
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+User=botbot 
+#ExecStartPre=/usr/bin/git pull
+WorkingDirectory=/home/botbot/front_robotics
+ExecStart=/usr/bin/docker compose up web_server ngrok -d
+ExecStop=/usr/bin/docker compose down
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
