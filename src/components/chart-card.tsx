@@ -133,7 +133,12 @@ export default function ChartCard({
   const [showControls, setShowControls] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   // Dados vindos de useChartData
-  const data = useChartData(topic, localRefreshTime);
+  const data = useChartData(
+    topic as keyof typeof topicsMessages,
+    localRefreshTime,
+    20,
+    true
+  );
   // Cria o estado que guarda os últimos 5 valores que realmente foram renderizados
   const [cachedLastFive, setCachedLastFive] = useState<any[]>(data.slice(-5));
 
