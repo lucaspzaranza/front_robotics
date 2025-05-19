@@ -151,7 +151,7 @@ export function Widget({
         bottom: Math.max(0, containerBounds.height - size.height),
       }}
       onDragStart={() => setIsDragging(true)}
-      onDrag={(_, info) => {
+      onDrag={(_, _info) => {
         position.current = {
           x: x.get(),
           y: y.get(),

@@ -55,12 +55,12 @@ export function useDemoNotifications() {
     const tempSubscription = simulator.subscribe(
       '/motor/temperature',
       (message: Temperature) => {
-        if (message.temperature > 50) {
+        if (message.data > 50) {
           dispatch({
             type: 'ADD_NOTIFICATION',
             payload: {
               title: 'High Motor Temperature',
-              message: `Motor temperature is at ${message.temperature.toFixed(
+              message: `Motor temperature is at ${message.data.toFixed(
                 1
               )}°C. Check cooling system.`,
               type: 'warning',

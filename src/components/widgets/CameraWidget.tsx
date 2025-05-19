@@ -72,7 +72,7 @@ export function CameraWidget({
                 </button>
               </div>
             ) : (
-              <div 
+              <div
                 className="flex-1 cursor-pointer px-2 py-1 rounded bg-gray-100 dark:bg-botbot-darker hover:bg-gray-200 dark:hover:bg-botbot-dark text-sm truncate"
                 onClick={() => {
                   setIsEditingTopic(true);
@@ -85,23 +85,23 @@ export function CameraWidget({
             )}
           </div>
         </div>
-        
+
         {/* Camera feed area */}
         <div className="flex-1 bg-black rounded-md overflow-hidden">
           {connection.online && isPlaying ? (
             <div className="w-full h-full">
-              <RosCameraImg topicName={topic} />
+              <RosCameraImg topicName={topic} cameraType="camera" />
             </div>
           ) : (
             <div className="w-full h-full flex items-center justify-center text-gray-400">
               <div className="flex flex-col items-center justify-center">
                 <Video className="w-16 h-16 mb-2" />
-                <p>{!connection.online ? "Robot offline" : "Stream paused"}</p>
+                <p>{!connection.online ? 'Robot offline' : 'Stream paused'}</p>
               </div>
             </div>
           )}
         </div>
-        
+
         {/* Controls */}
         <div className="mt-2 flex justify-center">
           <button
@@ -118,4 +118,4 @@ export function CameraWidget({
       </div>
     </Widget>
   );
-} 
+}

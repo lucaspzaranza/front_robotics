@@ -15,7 +15,7 @@ import { GridLayoutHelper } from './GridLayoutHelper';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export function Dashboard() {
-  const { widgets, removeWidget, updateWidgetPosition } = useDashboard();
+  const { widgets, removeWidget } = useDashboard();
   const dashboardRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
 

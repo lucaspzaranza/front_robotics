@@ -82,7 +82,6 @@ export function SidewaysGaugeWidget({
   maxValue = 100,
   value = 50,
   unit = '%',
-  color = 'hsl(275, 70%, 40%)', // Purple that matches the theme
   topic = '/battery_state',
   props = {},
 }: SidewaysGaugeWidgetProps) {

@@ -425,18 +425,9 @@ class ROS2Simulator extends EventEmitter {
     }
 
     const motorTemperature: Temperature = {
-      header: {
-        seq: 0,
-        stamp: {
-          sec: Math.floor(Date.now() / 1000),
-          nanosec: (Date.now() % 1000) * 1000000,
-        },
-        frame_id: 'motor_temperature',
-      },
-      temperature:
+      data:
         this.motorTemperatures.reduce((a, b) => a + b, 0) /
         this.motorTemperatures.length,
-      variance: 0.1,
     };
 
     this.emit('topic', {
@@ -447,7 +438,7 @@ class ROS2Simulator extends EventEmitter {
     // Store historical data
     this.historicalData[TOPICS.MOTOR_TEMPERATURE].push({
       timestamp: Date.now(),
-      value: motorTemperature.temperature,
+      value: motorTemperature.data,
     });
 
     // Limit historical data size
@@ -460,16 +451,7 @@ class ROS2Simulator extends EventEmitter {
     this.environmentTemp = Math.max(18, Math.min(30, this.environmentTemp));
 
     const envTemperature: Temperature = {
-      header: {
-        seq: 0,
-        stamp: {
-          sec: Math.floor(Date.now() / 1000),
-          nanosec: (Date.now() % 1000) * 1000000,
-        },
-        frame_id: 'environment_temperature',
-      },
-      temperature: this.environmentTemp,
-      variance: 0.05,
+      data: this.environmentTemp,
     };
 
     this.emit('topic', {
@@ -480,7 +462,7 @@ class ROS2Simulator extends EventEmitter {
     // Store historical data
     this.historicalData[TOPICS.ENVIRONMENT_TEMPERATURE].push({
       timestamp: Date.now(),
-      value: envTemperature.temperature,
+      value: envTemperature.data,
     });
 
     // Limit historical data size
