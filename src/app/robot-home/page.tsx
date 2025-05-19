@@ -20,15 +20,15 @@ export default async function RobotHome() {
         </div>
 
         {/* Mobile: First, Desktop: Middle column (60%) - 3D viz + cams */}
-        <div className="w-full pt-4 md:w-[60%] flex flex-col justify-center order-1 md:order-2 h-auto md:h-full overflow-auto pb-1 px-1">
+        <div className="w-full pt-4 md:w-[57%] flex flex-col justify-center order-1 md:order-2 h-auto md:h-full overflow-auto pb-1 px-1">
           <div className="w-full h-full overflow-auto">
             <MapsAndCams />
           </div>
         </div>
 
         {/* Desktop: Right column (10%) - controls */}
-        <div className="w-full md:w-[11%] order-3 pb-1 px-1 pt-4 md:h-full flex flex-col pr-4 md:pr-4">
-          <div className="w-full h-full overflow-auto">
+        <div className="w-full h-[calc(100vh-70px)] md:w-[12%] order-3 pb-1 px-1 pt-4 flex flex-col pr-4 md:pr-4">
+          <div className="w-full h-full">
             <RobotControls />
           </div>
         </div>

@@ -26,7 +26,7 @@ export default function RobotControls() {
   const [isInEmergencyMode, setEmergencyMode] = useState(false);
 
   const btnCustomClasses =
-    'basis-1/2 md:basis-full hover:dark:bg-botbot-dark/80 dark:bg-botbot-dark focus:dark:bg-botbot-darker';
+    'w-28 hover:dark:bg-botbot-dark/80 dark:bg-botbot-dark focus:dark:bg-botbot-darker';
 
   const emergencyOnBtnClasses = `basis-full h-fit font-bold p-3 md:p-4 bg-red-500 
     text-white text-md md:text-lg 
@@ -39,7 +39,7 @@ export default function RobotControls() {
     focus:bg-green-700`;
 
   const containerClasses =
-    'w-min max-h-[calc(80vh-83px)] overflow-auto flex flex-col p-1 md:p-2 gap-2';
+    'w-min max-h-[calc(76vh-83px)] overflow-auto flex flex-col p-1 md:p-2 gap-2';
 
   useEffect(() => {
     const checkWrapAndCount = () => {
