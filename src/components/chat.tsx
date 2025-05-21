@@ -13,7 +13,6 @@ import {
 import React, { useEffect, useRef, useState } from 'react';
 import InputField from './ui/input-field';
 import { useRobotConnection } from '../contexts/RobotConnectionContext';
-import RobotOffline from './robot-offline';
 import { useLanguage } from '@/contexts/LanguageContext';
 import useRobotActions from '@/hooks/ros/useRobotActions';
 

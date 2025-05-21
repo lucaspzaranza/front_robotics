@@ -152,7 +152,6 @@ export function JoystickWidget({
             });
           } else {
             const angle = Math.atan2(data.vector.y, data.vector.x);
-            const normalizedAngle = normalizeAngle(angle);
 
             joystickMove?.({
               stick: 'right',
