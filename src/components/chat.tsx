@@ -107,7 +107,8 @@ export default function Chat() {
   return (
     <div className="w-full h-full px-px flex flex-col items-center justify-center overflow-auto hide-scrollbar">
       {/* Messages area */}
-      {connection.online && (
+      {
+        // connection.online &&
         <div
           className="w-full h-full overflow-auto space-y-4 pr-2"
           ref={messagesScrollableAreaRef}
@@ -176,8 +177,7 @@ export default function Chat() {
           )}
           <div ref={messagesEndRef} />
         </div>
-      )}
-      {!connection.online && <RobotOffline useBorder={false} />}
+      }
 
       <form
         onSubmit={(e) => {
@@ -193,7 +193,7 @@ export default function Chat() {
           className="mb-1 bg-white dark:bg-botbot-accent/30 text-gray-700"
           value={message}
           name="message"
-          disabled={disasbleInput}
+          // disabled={disasbleInput}
           onChange={(e) => setMessage(e.target.value)}
         >
           <div className="w-[6rem] flex flex-row items-center justify-between ml-2">
@@ -206,7 +206,7 @@ export default function Chat() {
 
             <button
               type="submit"
-              disabled={disasbleInput}
+              // disabled={disasbleInput}
               className="max-w-[50px] w-24 h-full p-2 bg-clear-pink dark:bg-botbot-darker rounded-full hover:bg-action-btn-focus dark:hover:bg-botbot-dark flex items-center justify-center"
             >
               <ArrowRight className="w-5 h-5" />
